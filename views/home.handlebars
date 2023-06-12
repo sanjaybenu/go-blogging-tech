@@ -14,7 +14,9 @@
   <div class="card-body">
     
     <p class="card-text">{{blog.description}}</br> ----{{blog.user.f_name}}</p>
-   
+   {{#each comments}}
+   <p class="card-text">{{comments.comment}}</p>
+   {{/each}}
   </div>
    <a href="/api/users" class="btn btn-primary mx-auto" style="width:40%;">More Blogs</a>
 </div>

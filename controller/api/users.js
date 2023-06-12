@@ -63,10 +63,32 @@ router.get('/modify/:id',async(req,res)=>{
      res.render('modify',{blog, loggedIn:req.session.loggedIn, username:req.session.username})
   })
 
-  router.get('/delete',(req,res)=>{
+  // router.get('/delete',(req,res)=>{
 
-    res.send("Delete Me")
-  })
+  //   res.send("Delete Me")
+  // })
+
+  router.get('/comment/:id',async(req,res)=>{
+
+    const blogId = req.params.id
+
+    console.log(blogId)
+
+    const blogData = await Blog.findOne({
+      where: { id: blogId },
+      include: {
+        model: User,
+      },
+    });
+
+
+    const blog = blogData.get({plain:true})
+
+    res.render('comment',{blog,loggedIn:req.session.loggedIn, username:req.session.username})
+
+    //res.send("Comment On the post")
+  }) 
+
 
 router.post('/',(req, res)=>{
 
