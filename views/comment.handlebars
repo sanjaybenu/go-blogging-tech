@@ -1,0 +1,23 @@
+{{#if loggedIn}}
+
+<div style="height:100vh; margin-top: 20%; " >
+<div class="mx-auto" style="width: 65%;">
+
+<form action="/api/blog/comment/{{blog.id}}", method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label">Blog Title</label>
+    <input type="text" class="form-control" id="title" value="{{blog.title}}" disabled>
+   
+  </div>
+  <div class="mb-3">
+    <label for="comment" class="form-label">Your Comments</label>
+    <textarea type="text" class="form-control" id="comment" name="comment"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+</div>
+
+{{/if}}

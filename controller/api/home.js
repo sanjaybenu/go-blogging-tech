@@ -1,12 +1,16 @@
 const express = require('express');
 
 const router = express.Router();
- const {Blog, User} = require('../../models')
+ const {Blog, User, Comment} = require('../../models')
 
 router.get('/',async(req, res)=>{
     //res.send('<h2>Home Route</h2>')
   const blogData = await Blog.findOne(
-    { include:{model:User, attributes:['f_name']},
+    { include:[{model:User, attributes:['f_name']},
+  {
+    model: Comment
+  
+  }],
         order: [
             ['id', 'DESC']
         ]
@@ -16,7 +20,7 @@ router.get('/',async(req, res)=>{
     }
   )
    const blog = blogData.get({plain:true})
-  //  res.json(blog)
+    //res.json(blog)
       res.render('home',{blog, loggedIn:req.session.loggedIn,username:req.session.username})
 
 })
