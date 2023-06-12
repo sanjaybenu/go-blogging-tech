@@ -41,13 +41,13 @@ router.post('/login',async(req, res)=>{
           });
         
           if (!dbUserData) {
-            res.status(400).render("nouser");
+            res.redirect('/');
             return;
           }
           const validPassword = await dbUserData.checkPassword(req.body.password);
         
           if (!validPassword) {
-            res.status(400).render("nouser");
+            res.redirect('/');
             return;
           }
         

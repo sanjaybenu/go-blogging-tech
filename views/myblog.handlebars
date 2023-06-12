@@ -9,10 +9,11 @@
     
 
     <a href="/api/users/modify/{{blog.id}}" class="btn btn-primary">Modify</a>
-    <form data-blog-id="{{blog.id}}"> 
+    <form data-blog-id="{{blog.id}}" id="deleteForm">
     <a class="btn btn-primary" id="deleteBtn">Delete</a>
     </form>
   </div>
 </div>
 </div>
 {{/if}}
+<script src="/js/delete.js"></script>
