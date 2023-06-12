@@ -1,0 +1,15 @@
+{{#if loggedIn}}
+<div class="d-flex justify-content-center align-items-center">
+<div class="card mx-auto mt-6 text-center" style="width: 70%;margin-top:30%">
+  <h5 class="card-title bg-secondary text-light">{{blog.title}}</h5>
+  <div class="card-body">    
+    <p class="card-text">{{blog.description}}</br> ----{{blog.user.f_name}}</p>
+    <form action="/users/comments" method="
+    get">
+    <button class="btn btn-primary" >Add a Commment</button> 
+    </form>  
+  </div>
+</div>
+</div>
+{{/if}}
+

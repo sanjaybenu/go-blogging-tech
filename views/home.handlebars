@@ -1,0 +1,35 @@
+
+
+{{#if loggedIn}}
+
+<h4 style="float:right;">Welcome {{username}}</h4></br></br>
+
+   <h4><p style="text-align:center">Latest Blog:</p></h4>
+<div class="d-flex justify-content-center align-items-center">
+
+ 
+
+<div class="card mx-auto mt-6 text-center" style="width: 70%;margin-top:10%">
+  <h5 class="card-title bg-secondary text-light">{{blog.title}}</h5>
+  <div class="card-body">
+    
+    <p class="card-text">{{blog.description}}</br> ----{{blog.user.f_name}}</p>
+   
+  </div>
+   <a href="/api/users" class="btn btn-primary mx-auto" style="width:40%;">More Blogs</a>
+</div>
+</div>
+{{else}}
+<div style="height:100vh; margin-top: 10%" >
+<div class="card mx-auto mt-6" style="width: 70%;">
+  <div class="card-body text-center">
+    <h5 class="card-title">Welcome to the World of Technology</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Technology Blogs</h6>
+    <p class="card-text">Become a member of the community to read, learn and share your thoughts on technology, innovation and latest technical trends</p>
+    <a href="/api/home/login" class="card-link">Login</a>
+    <a href="/api/home/register" class="card-link">Register</a>
+  </div>
+</div>
+</div>
+
+{{/if}}
