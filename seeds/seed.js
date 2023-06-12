@@ -57,7 +57,7 @@ const seed = async () => {
 
   ];
 
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
   await User.bulkCreate(userData);
   await Blog.bulkCreate(blogData);
 
