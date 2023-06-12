@@ -1,0 +1,15 @@
+{{#if loggedIn}}
+<div class="my-6" style="height: 100%;margin-top:80px;">
+{{#each blogs}}
+<a href="/api/blog/{{id}}" style="text-decoration:none; color:black">
+<div class="card mx-auto my-4 " style="width: 70%;">
+  <h5 class="card-title bg-secondary text-light text-center">{{title}}</h5>
+  <div class="card-body">
+    
+    <p class="card-text">{{description}}</br> By: {{user.f_name}}</p>
+  </div>
+</div>
+</a>
+{{/each}}
+</div>
+{{/if}}

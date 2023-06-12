@@ -1,0 +1,13 @@
+{{#if loggedIn}}
+<div class="card mx-auto" style="width: 70%;margin-top:20%" >
+  <div class="card-body">
+    <h5 class="card-title text-center mb-2"><span style="color:red">&#x26A0;</span> Please post a Blog</h5></br>
+
+    <p class="card-text">Share your expertise, thoughts or reviews on technology. Be a part of the growing community.
+        Click link below to add a blog or click on Read Blogs to go back to the list of the blogs
+    </p>
+    <a href="/api/users/addblog" class="card-link">Add a Blog</a>
+    <a href="/api/users" class="card-link">Read Blogs</a>
+  </div>
+</div>
+{{/if}}
