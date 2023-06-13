@@ -12,7 +12,7 @@ const deleteBlog = async () => {
   });
 
    if (response.ok) {
-     document.location.replace('/api/users');
+    document.location.replace('/api/users/dashboard');
   } else {
     alert(response.statusText);
   }

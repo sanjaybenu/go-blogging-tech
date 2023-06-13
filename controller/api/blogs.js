@@ -63,7 +63,7 @@ router.post('/',async(req, res)=>{
 
 // res.json(newData)
 const newBlog = await Blog.create(newData)
-res.redirect('/api/users')
+res.redirect('/api/users/dashboard')
 
 
 
@@ -100,7 +100,7 @@ where:{
 }
 })
 console.log(newBlog)
-res.redirect('/api/users/')
+res.redirect('/api/users/dashboard')
 
 })
 
@@ -112,7 +112,7 @@ router.delete('/del/:id',async(req, res)=>{
     }
   })
 
-  res.redirect('/api/users')
+  res.redirect('/api/users/dashboard')
 
 
 })

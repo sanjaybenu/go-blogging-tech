@@ -17,8 +17,7 @@ const modify = async () => {
     });
   
     if (response.ok) {
-      console.log("Modified blog")
-      //window.location.href='/api/users'
+      document.location.replace('/api/users/dashboard');
     } else {
       console.log("Failed to modify the blog");
     }
