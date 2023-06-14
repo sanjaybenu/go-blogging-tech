@@ -13,7 +13,7 @@
   <h5 class="card-title bg-secondary text-light">{{blog.title}}</h5>
   <div class="card-body">
     
-    <p class="card-text">{{blog.description}}</br> ----{{blog.user.f_name}}</p>
+    <p class="card-text">{{blog.description}}</br> <h4 class="h4">Author:</h4></p><p>{{blog.user.f_name}}</p>
    {{#each comments}}
    <p class="card-text">{{comments.comment}}</p>
    {{/each}}
