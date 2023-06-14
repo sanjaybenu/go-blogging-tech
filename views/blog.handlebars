@@ -3,11 +3,14 @@
 <div class="card mx-auto mt-6 text-center" style="width: 70%;margin-top:10%">
   <h5 class="card-title bg-secondary text-light">{{blog.title}}</h5>
   <div class="card-body">    
-    <p class="card-text">{{blog.description}}</br> ----{{blog.user.f_name}}</p>
+    <p class="card-text">{{blog.description}}</br> <span class="h4">Author:</span></br>{{blog.user.f_name}}</p>
+    <h4>Comments:</h4>
     {{#each blog.comments}}
+    <div class="bg-secondary text-light mb-2">
     <p class="card-text">{{comment}}</p>
+    </div>
    {{/each}}
-    <a href="/api/users/comment/{{blog.id}}" style="text-decoration:none;"><button class="btn btn-primary" >Add a Commment</button></a> 
+    <a href="/api/users/comment/{{blog.id}}" style="text-decoration:none;"><button class="btn btn-outline-primary" >Add a Commment</button></a> 
     
   </div>
 </div>
