@@ -19,9 +19,13 @@ router.get('/',async(req, res)=>{
         limit: 1
     }
   )
+    if(!blogData){
+    res.render('firstuser',{loggedIn:req.session.loggedIn,username:req.session.username})
+  }else{
    const blog = blogData.get({plain:true})
     //res.json(blog)
       res.render('home',{blog, loggedIn:req.session.loggedIn,username:req.session.username})
+  }
 
 })
 
