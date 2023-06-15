@@ -72,7 +72,11 @@ router.post('/register',async(req, res)=>{
 
   if (existingUser.length != 0) {
     res.render("existinguser");
-  } else {
+  } else if(req.body.password.length<8){
+    res.render('existinguser')
+  }
+  else
+  {
     const newUser = {
       f_name: req.body.f_name,
       l_name: req.body.l_name,
