@@ -1,16 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <img src="/assets/logo_transparent.png" alt="logo" style="width:100px;height: 100px;">
-    <a class="navbar-brand">Go Blogging Tech</a>
+    {{#if loggedIn}}
+    <a class="navbar-brand" href="/api/home">Go Blogging Tech</a>
+    {{else}}
+    <a class="navbar-brand" href="/">Go Blogging Tech</a>
+    {{/if}}
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+   
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+         {{#if loggedIn}}
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/api/home">Home</a>
         </li>
-         {{#if loggedIn}}
+         
         <li class="nav-item">
           <a class="nav-link" href="/api/users/dashboard">Dashboard</a>
         </li>
