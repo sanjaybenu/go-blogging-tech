@@ -45,13 +45,13 @@ router.post('/login',async(req, res)=>{
           });
         
           if (!dbUserData) {
-            res.redirect('/');
+            res.render('wronglogin');
             return;
           }
           const validPassword = await dbUserData.checkPassword(req.body.password);
         
           if (!validPassword) {
-            res.redirect('/');
+            res.render('wronglogin');
             return;
           }
         
