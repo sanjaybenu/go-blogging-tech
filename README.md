@@ -1,4 +1,4 @@
-# Go_Blogging-Tech
+# Go-Blogging-Tech
 
 ![Github license](https://img.shields.io/badge/license-MIT-blue)
 
