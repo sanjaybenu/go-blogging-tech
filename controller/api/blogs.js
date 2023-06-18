@@ -11,18 +11,45 @@ router.get('/',async(req, res)=>{
     res.render('blogs',{blogs, loggedIn:req.session.loggedIn,username:req.session.username})
 })
 
-router.get('/:id',async (req, res)=>{
-  const blogData = await Blog.findOne({
-    where: { id: req.params.id },
-    include: [{
-      model: User
-    },{model:Comment}]
-  });
+// router.get('/:id',async (req, res)=>{
+//   const blogData = await Blog.findOne({
+//     where: { id: req.params.id },
+//     include: [{
+//       model: User
+//     },{model:Comment}]
+//   });
 
-  const blog = blogData.get({plain:true})
-  //res.json(blog)
-  res.render('blog', {blog, loggedIn:req.session.loggedIn, username:req.session.username})
-})
+//   const blog = blogData.get({plain:true})
+//   //res.json(blog)
+//   res.render('blog', {blog, loggedIn:req.session.loggedIn, username:req.session.username})
+// })
+
+//*****NEW ******//
+router.get('/:id',async (req,res)=>{
+  const blogData= await Blog.findOne({
+    where: { id: req.params.id },
+    include: [
+      {
+        model: User,
+        attributes: ['username','f_name'],
+      },
+      {
+        model: Comment,
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+        ],
+      },
+    ],
+  })
+  //res.json(blogData)
+    const blog = blogData.get({plain:true})
+    //res.json(blog)
+    res.render('blog', {blog, loggedIn:req.session.loggedIn, username:req.session.username})
+  
+  });
 
 
 router.get('/myblogs/:id', async (req, res) => {
